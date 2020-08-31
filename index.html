@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device -width, initial-scale=1.0">
+    <title>Textbox Number Phone</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <form class="form-kt">
+        <div class="input-group">
+            <h1 >Kiểm tra số điện thoại của bạn</h1>
+            <p>Xin vui lòng nhập số điện thoại của bạn:</p>
+            <input id="input" type="text" class="form-control" placeholder="Số điện thoại">
+            
+            <button onclick="ValidateNumberPhone()" class="btn btn-default checkmobile" type="button">
+                Kiểm tra
+            </button>
+        
+        </div>
+    </form> 
+    <script type="text/javascript">
+        
+        function ValidateNumberPhone(){
+            let phoneNumber = document.getElementById('input').value
+            var regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+            if( phoneNumber !==''){
+                if (regex.test(phoneNumber) == false) 
+                {
+                    alert('Số điện thoại của bạn không đúng định dạng!');
+                }else{
+                    alert('Số điện thoại của bạn hợp lệ!');
+                }
+            }else{
+                alert('Bạn chưa điền số điện thoại!');
+            }
+           
+        }
+    </script>
+</body>
+</html>
